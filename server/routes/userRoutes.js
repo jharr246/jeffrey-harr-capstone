@@ -45,11 +45,37 @@ router.get("/current", async (req, res) => {
   if (authHeader) {
     const token = authHeader.split(" ")[1];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.where({ email: decoded.email }).fetch();
-    const current = { ...user.attributes, password: null };
-    return res.status(200).json(current);
+    console.log(decoded);
+    let user = await User.where({ id: decoded.id }).fetch({
+      withRelated: ["profile"],
+    });
+
+    // let userWithoutPassword = {
+    //   id: user.id,
+    //   userName: user.userName,
+    //   firstName: user.firstName,
+    //   lastName: user.lastName,
+    //   email: user.email,
+    //   password: null,
+    //   profile: user.profile,
+    // };
+
+    // const current = { user.password, password: null };
+    return res.status(200).json(user);
   }
   return res.status(403).json({ message: "Please Login" });
+});
+
+// get all users
+router.get("/users", async (req, res) => {
+  const users = await User.fetchAll({ withRelated: ["profile"] });
+
+  // const allUsers = { ...users.attributes, password: null };
+  // const usersWithProfile = users.filter((user) => {
+  //   return user.profile.length > 0;
+  // });
+
+  return res.status(200).json(users);
 });
 
 module.exports = router;

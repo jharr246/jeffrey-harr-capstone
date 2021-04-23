@@ -6,13 +6,19 @@ const dogNames = require("dog-names");
 const randomAnimal = require("random-animal.js");
 const { default: axios } = require("axios");
 const { fake } = require("faker");
+const bcrypt = require("bcrypt");
+
+function hashPassword(password) {
+  const salt = bcrypt.genSaltSync();
+  return bcrypt.hashSync(password, salt);
+}
 
 const createUser = () => ({
   userName: faker.internet.userName(),
   firstName: faker.name.firstName(),
   lastName: faker.name.lastName(),
   email: faker.internet.email(),
-  password: faker.internet.password(),
+  password: hashPassword(faker.internet.password()),
 });
 
 const fakeUser = createUser();
@@ -90,11 +96,24 @@ exports.seed = function (knex) {
       // .catch((err) => {
       //   console.log(err);
       // })
+
       .then(() => {
         return knex("profiles").del();
       })
       .then(() => {
         return createProfile();
+      })
+      .then((profiles) => {
+        return knex("users")
+          .pluck("id")
+          .then((usersIds) => {
+            let updatedProfiles = profiles.map((profile) => {
+              profile.user_id =
+                usersIds[Math.floor(Math.random() * usersIds.length)];
+              return profile;
+            });
+            return updatedProfiles;
+          });
       })
       .then((res) => {
         return knex("profiles").insert(res);

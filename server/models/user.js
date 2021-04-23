@@ -2,8 +2,8 @@ const bookshelf = require("../../bookshelf");
 
 const User = bookshelf.model("User", {
   tableName: "users",
-  profiles: function () {
-    return this.hasOne("profile");
+  profile: function () {
+    return this.hasMany("Profile");
   },
 });
 
