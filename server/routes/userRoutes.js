@@ -30,7 +30,7 @@ router.post("/login", async (req, res) => {
     req.body.password,
     user.attributes.password
   );
-  if (!isMatch) return res.status(400).json({ error: "InValid Password." });
+  if (!isMatch) return res.status(400).json({ err: "InValid Password." });
   const token = jwt.sign(
     { id: user.id, email: user.attributes.email },
     process.env.JWT_SECRET,

@@ -52,4 +52,11 @@ router.get("/current", async (req, res) => {
   return res.status(403).json({ message: "Please Login" });
 });
 
+//get all profiles
+
+router.get("/all", async (req, res) => {
+  const profiles = await Profile.fetchAll({ withRelated: ["user"] });
+  return res.status(200).json(profiles);
+});
+
 module.exports = router;
