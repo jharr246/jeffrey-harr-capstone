@@ -1,0 +1,82 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials//colors" as *;
+
+* {
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+}
+
+.profile__list-img {
+  width: 6rem;
+  height: 6rem;
+  margin: 1rem;
+  border: 0.5rem solid $melon;
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 1rem;
+}
+.profile__container {
+  background-color: $paleSilver;
+  border-radius: 2rem;
+  margin: 1rem 1rem;
+  border: 1rem solid $melon;
+  display: flex;
+
+  left: 3rem;
+}
+.profile__list {
+  margin: 0;
+}
+.profile__dog-name {
+  margin: 1rem 0 1rem 1rem;
+  width: 9.5rem;
+  font-family: "Varela Round", sans-serif;
+  color: $alabaster;
+}
+.profile__breed {
+  margin: 0 0 0 1rem;
+  font-family: "Varela Round", sans-serif;
+  font-size: 0.75rem;
+}
+.profile__link {
+  margin: 2rem 0 0 1rem;
+  font-family: "Varela Round", sans-serif;
+  font-size: 0.75rem;
+}
+.search-bar {
+  width: 12rem;
+  border-radius: 6.25rem;
+  height: 2rem;
+  border: none;
+  background-color: white;
+  margin: 1rem 0 0 1rem;
+
+  &:focus {
+    outline: none;
+    border-radius: 6.25rem;
+    background-color: white;
+  }
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 0rem;
+}
+.search-title {
+  margin: 1rem 0 0 1.5rem;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  background-color: $melon;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+.search-active {
+  display: flex;
+  margin: 0 0 0 2rem;
+
+  &__description {
+    margin: 1rem 0 0 4rem;
+  }
+}

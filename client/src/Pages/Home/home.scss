@@ -1,0 +1,116 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials/colors" as *;
+
+* {
+  input {
+    padding: 0 0 0 1rem;
+  }
+}
+
+.home {
+  &__bar {
+    display: flex;
+    background-color: $melon;
+    align-items: center;
+    height: 4rem;
+  }
+  &__welcome {
+    margin: 0 4.5rem 0 1rem;
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+  }
+  &__search {
+    width: 10rem;
+    border-radius: 6.25rem;
+    height: 2rem;
+
+    border: none;
+    background-color: $alabaster;
+    &:focus {
+      outline: none;
+      border-radius: 6.25rem;
+      background-color: white;
+    }
+  }
+  &__border {
+    border: 0.0625rem solid $paleSilver;
+    margin: 2rem 1rem 1rem 1rem;
+  }
+}
+.profile {
+  margin: 0 1rem;
+  display: flex;
+
+  justify-content: center;
+
+  &__name {
+    font-family: "Varela Round", sans-serif;
+    font-size: 3rem;
+    margin: 1rem 0 1rem 0rem;
+  }
+
+  &__img {
+    height: 11rem;
+    width: 11rem;
+    border-radius: 1rem;
+    margin: 0rem 0 0 0;
+    border: 0.5rem solid $melon;
+    box-shadow: 0 8px 6px -6px black;
+  }
+  &__details-container {
+    margin: 3rem 0 0 1rem;
+  }
+  &__details {
+    font-family: "Varela Round", sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 3rem 0;
+  }
+  &__bio {
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+    margin: 0 3rem;
+  }
+}
+.logout {
+  margin: 0 2rem 0 2rem;
+  background-color: $darkLava;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  color: $alabaster;
+  border-radius: 2rem;
+  height: 2rem;
+  width: 4rem;
+  box-shadow: 0 8px 6px -6px black;
+  border: none;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    border: none;
+    box-shadow: none;
+    transform: scale(0.9);
+  }
+  &:hover {
+    background-color: $paleSilver;
+  }
+}
+.home-img {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 0 3.5rem 0.15rem 0.5rem;
+  transform: rotate(-45deg);
+  opacity: 0.5;
+}
+.search-park-container {
+  margin: 0 0 5rem 0;
+}
+.home__park-title {
+  margin: 0 1.5rem;
+}
+.profile__title {
+  font-family: "Varela Round", sans-serif;
+  margin: 1rem 0 0 1rem;
+}

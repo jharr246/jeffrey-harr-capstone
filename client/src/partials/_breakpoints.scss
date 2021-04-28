@@ -1,0 +1,25 @@
+//Media Query breakpoint values
+
+$mobile-breakpoint: 375px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+// Media query for desktop breakpoint
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+// Media query for mobile breakpoint
+@mixin mobile {
+  @media screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}

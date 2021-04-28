@@ -1,0 +1,138 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials//colors" as *;
+
+* {
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+}
+
+.park-finder {
+  margin: 0 0 0rem 6rem;
+}
+
+.finder-state {
+  width: 10rem;
+  border-radius: 6.25rem;
+  height: 2rem;
+  border: none;
+  background-color: white;
+  margin: 1rem 0 0 1rem;
+
+  &:focus {
+    outline: none;
+    border-radius: 6.25rem;
+    background-color: white;
+  }
+}
+.finder-city {
+  width: 10rem;
+  border-radius: 6.25rem;
+  height: 2rem;
+  border: none;
+  background-color: white;
+  margin: 2rem 0 0 1rem;
+
+  &:focus {
+    outline: none;
+    border-radius: 6.25rem;
+    background-color: white;
+  }
+}
+
+.finder-submit {
+  margin: 1rem 0 1.5rem 1rem;
+  background-color: $darkLava;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  color: $alabaster;
+  border-radius: 2rem;
+  height: 3rem;
+  width: 4rem;
+  box-shadow: 0 8px 6px -6px black;
+  border: none;
+  outline: none;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    border: none;
+    box-shadow: none;
+    transform: scale(0.9);
+  }
+  &:hover {
+    background-color: $paleSilver;
+  }
+}
+.city-submit {
+  width: 5rem;
+}
+.park-container {
+  margin: 0rem 0rem 0 3rem;
+  //   display: flex;
+}
+.options-container {
+  display: flex;
+  align-items: center;
+  margin: 0 0rem 0 0rem;
+  position: absolute;
+  left: 1.35rem;
+}
+.park-label {
+  margin: 2rem 0;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  background-color: $melon;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  color: white;
+}
+.options {
+  margin: 0rem 0rem 0rem 0.75rem;
+}
+.park-iframe {
+  margin: 0 0 0 3rem;
+}
+.details-submit {
+  margin: 1rem 1rem 0 1rem;
+}
+.results-list {
+  border: 1rem solid $melon;
+  margin: 1rem 3rem 0 0rem;
+  border-radius: 2rem;
+}
+.park__border {
+  margin: 0rem 3rem 0rem 0;
+  height: 6rem;
+}
+.results {
+  margin: 1rem;
+  text-align: center;
+
+  &__name {
+    font-size: 1.5rem;
+  }
+  &__rating {
+    font-size: 1.25rem;
+  }
+  &__address {
+    margin: 1rem 0 0 0;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    background-color: $paleSilver;
+    border-radius: 0 0 1rem 1rem;
+    border-top: 1rem solid $melon;
+    color: white;
+  }
+}
+.parklist__header {
+  display: flex;
+  margin: 1rem 0 1rem 0;
+  align-items: center;
+
+  &--close {
+    margin: 0 8rem 0 0;
+  }
+}

@@ -1,0 +1,76 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials//colors" as *;
+.title {
+  font-family: "McLaren", cursive;
+  letter-spacing: 4px;
+  font-size: 2.5rem;
+  text-align: center;
+  color: $darkLava;
+}
+
+.create {
+  margin: 0 2rem;
+  &__form {
+    border-radius: 2rem;
+    height: 38rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+    align-items: center;
+    background-color: $melon;
+    box-shadow: 0 12px 6px -6px black;
+  }
+  &__label {
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: $darkLava;
+  }
+  &__input {
+    width: 12rem;
+    border-radius: 6.25rem;
+    height: 2rem;
+    margin: 1rem 0 0 0;
+    border: none;
+    background-color: $alabaster;
+    &:focus {
+      outline: none;
+      border-radius: 6.25rem;
+      background-color: white;
+    }
+  }
+  &__button {
+    margin: 2rem 2rem 0rem 2rem;
+    border-radius: 6.25rem;
+    width: 10rem;
+    height: 2rem;
+    color: $darkLava;
+    background-color: $alabaster;
+    font-family: "Varela Round", sans-serif;
+    box-shadow: 0 8px 6px -6px black;
+    border: 1px solid lightgray;
+    font-weight: bold;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      box-shadow: none;
+      transform: scale(0.9);
+    }
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+}
+.paw {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 2rem;
+  transform: rotate(-45deg);
+}

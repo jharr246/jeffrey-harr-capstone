@@ -1,0 +1,125 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials//colors" as *;
+body {
+  background-color: $alabaster;
+}
+
+.logo {
+  font-family: "McLaren", cursive;
+  letter-spacing: 4px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: $darkLava;
+  margin: 0 0 8rem 0;
+}
+.iframe {
+  position: absolute;
+  top: 2rem;
+  left: 3.25rem;
+}
+
+.login {
+  margin: 0 2rem;
+  color: $darkLava;
+
+  &__form {
+    border-radius: 2rem;
+
+    height: 22rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem 0;
+    align-items: center;
+    background-color: $melon;
+    box-shadow: 0 12px 6px -6px black;
+    background-color: light;
+  }
+
+  &__labels {
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: $darkLava;
+  }
+  &__img {
+    height: 15rem;
+    width: 20rem;
+    display: none;
+  }
+  &__button {
+    margin: 2rem 0 3rem 0;
+    border-radius: 6.25rem;
+    width: 5rem;
+    height: 2rem;
+    margin: 0 2rem 0 0;
+    background-color: $alabaster;
+    font-family: "Varela Round", sans-serif;
+    box-shadow: 0 8px 6px -6px black;
+    border: 1px solid lightgray;
+    font-weight: bold;
+    color: $darkLava;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      box-shadow: none;
+      transform: scale(0.9);
+    }
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+  &__input {
+    width: 12rem;
+    border-radius: 6.25rem;
+    height: 2rem;
+    margin: 1rem 0 0 0;
+    outline: none;
+    border: none;
+    background-color: $alabaster;
+
+    &:focus {
+      outline: none;
+      border-radius: 6.25rem;
+      background-color: white;
+    }
+  }
+  &__title {
+    font-family: "Varela Round", sans-serif;
+  }
+}
+.signUp {
+  margin: 1rem 0 3rem 0;
+  border-radius: 6.25rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: $alabaster;
+  font-family: "Varela Round", sans-serif;
+  border: 1px solid lightgray;
+  box-shadow: 0 8px 6px -6px black;
+  font-weight: bold;
+  color: $darkLava;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    border: none;
+    box-shadow: none;
+    transform: scale(0.9);
+  }
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+.paw {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  transform: rotate(-45deg);
+}

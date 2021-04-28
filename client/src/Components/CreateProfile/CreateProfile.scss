@@ -1,0 +1,164 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials//colors" as *;
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(89, 31, 104, 0.3);
+}
+
+.create-profile {
+  position: absolute;
+  top: 5rem;
+  right: 2.5rem;
+  width: 18rem;
+  border: 0.5rem solid $alabaster;
+  background-color: $melon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  min-height: 50rem;
+  max-height: 100rem;
+  overflow: auto;
+
+  &__title {
+    font-family: "McLaren", cursive;
+    font-size: 1.5rem;
+    margin: 1rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+  &__img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 1rem;
+    margin: 1rem 0 0 0;
+    border: 0.5rem solid $alabaster;
+    box-shadow: 0 8px 6px -6px black;
+
+    &--upload {
+      height: 0.1px;
+      width: 0.1px;
+      z-index: -1;
+    }
+  }
+  &__input {
+    width: 12rem;
+    border-radius: 6.25rem;
+    height: 2rem;
+    margin: 1rem 0 0 0;
+    outline: none;
+    border: none;
+    background-color: $alabaster;
+
+    &:focus {
+      outline: none;
+      border-radius: 6.25rem;
+      background-color: white;
+    }
+    &--bio {
+      height: 10rem;
+      border-radius: 1rem;
+      &:focus {
+        border-radius: 1rem;
+      }
+    }
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+    margin: 1rem 0;
+    &--avatar {
+      margin: 1rem 1rem;
+      text-align: center;
+
+      &:hover .upload-button {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      &:hover .upload-button__img {
+        transition: 1s;
+
+        opacity: 1;
+      }
+    }
+  }
+  &__submit {
+    border: 1px solid black;
+    margin: 1rem 4rem;
+    border-radius: 6.25rem;
+    width: 8rem;
+    height: 2rem;
+    background-color: $alabaster;
+    font-family: "Varela Round", sans-serif;
+    border: 1px solid lightgray;
+    box-shadow: 0 8px 6px -6px black;
+    font-weight: bold;
+    color: $darkLava;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      border: none;
+      box-shadow: none;
+      transform: scale(0.9);
+    }
+  }
+}
+.upload-button {
+  border: 1px solid black;
+  margin: 1rem 1rem 0rem 1rem;
+  border-radius: 6.25rem;
+  width: 8rem;
+  height: 2rem;
+  background-color: $alabaster;
+  font-family: "Varela Round", sans-serif;
+  border: 1px solid lightgray;
+  box-shadow: 0 8px 6px -6px black;
+  font-weight: bold;
+  color: $darkLava;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    border: none;
+    box-shadow: none;
+    transform: scale(0.9);
+  }
+  &:active .upload-button__img {
+    opacity: 1;
+  }
+
+  &__img {
+    height: 2rem;
+    width: 2rem;
+    margin: 0 0 0.15rem 0.5rem;
+    transform: rotate(-45deg);
+    opacity: 0.1;
+  }
+}
+
+.upload-firebase {
+  margin: 1rem 0rem 0 4rem;
+}
+.file-name {
+  margin: 0rem 0rem 0 4rem;
+  font-family: "Varela Round", sans-serif;
+}
+.file-upload {
+  margin: 1rem 0rem 0 3rem;
+}
