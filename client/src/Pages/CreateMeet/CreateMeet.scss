@@ -1,0 +1,26 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials//colors" as *;
+
+.date__container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0rem 0 0rem;
+}
+.date__select {
+  margin: 0 2rem 0 2rem;
+}
+.calendar__container {
+  margin: 0 1rem;
+}
+.calendar__img {
+  margin: 0 2rem 0 0;
+}
+.time__container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0rem 0 0rem;
+}
+.time__select {
+  margin: 0rem 2rem 0 2rem;
+}

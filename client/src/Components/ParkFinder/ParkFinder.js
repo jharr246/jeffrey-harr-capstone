@@ -122,7 +122,14 @@ export default class ParkFinder extends Component {
         {this.state.parkList ? (
           this.state.parkList.map((park) => {
             return (
-              <div className="results-list">
+              <div
+                className="results-list"
+                value={park.name}
+                name={park.name}
+                address={park.address}
+                onClick={this.props.parkSelect}
+                id={park.place_id}
+              >
                 <div>
                   <p className="results results__name">{park.name}</p>
                   <p className="results results__rating">
