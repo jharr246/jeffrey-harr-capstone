@@ -19,8 +19,34 @@
 .time__container {
   display: flex;
   align-items: center;
-  margin: 2rem 0rem 0 0rem;
+  margin: 2rem 1rem 0 0rem;
 }
 .time__select {
   margin: 0rem 2rem 0 2rem;
+}
+.create-btn {
+  margin: 2rem 0 3rem 10rem;
+  border-radius: 6.25rem;
+  width: 14rem;
+  height: 3rem;
+  margin: 0 2rem 0 0;
+  background-color: $darkLava;
+  font-family: "Varela Round", sans-serif;
+  box-shadow: 0 8px 6px -6px black;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: $alabaster;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    box-shadow: none;
+    transform: scale(0.9);
+  }
+  &:hover {
+    background-color: green;
+  }
+}
+.create-container {
+  margin: 2rem 5rem 0 5rem;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./ParkFinder.scss";
+import ParkResults from "../ParkResults/ParkResults";
 
 export default class ParkFinder extends Component {
   state = {
@@ -122,24 +123,17 @@ export default class ParkFinder extends Component {
         {this.state.parkList ? (
           this.state.parkList.map((park) => {
             return (
-              <div
-                className="results-list"
-                value={park.name}
+              <ParkResults
+                parkSelect={this.props.parkSelect}
+                rating={park.rating}
                 name={park.name}
-                address={park.address}
-                onClick={this.props.parkSelect}
+                address={park.formatted_address}
+                key={park.place_id}
                 id={park.place_id}
-              >
-                <div>
-                  <p className="results results__name">{park.name}</p>
-                  <p className="results results__rating">
-                    Rating: {park.rating}
-                  </p>
-                </div>
-                <p className="results results__address">
-                  {park.formatted_address}
-                </p>
-              </div>
+                parkButton={this.props.parkButton}
+                parkList={this.state.parkList}
+                // onClick={this.props.parkSelect}
+              />
             );
           })
         ) : (
