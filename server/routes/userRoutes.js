@@ -2,6 +2,8 @@ const router = require("express").Router();
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const Meet = require("../models/meets");
+const ProfileMeet = require("../models/profile_meet");
 
 //create user
 router.post("/", async (req, res) => {
@@ -50,6 +52,16 @@ router.get("/current", async (req, res) => {
       withRelated: ["profile"],
     });
 
+    const profileMeets = await ProfileMeet.where({
+      profile_id: user.id,
+    }).fetchAll();
+
+    const meetIds = profileMeets.map((item) => {
+      return item._previousAttributes.meet_id;
+    });
+
+    const meets = await Meet.where("id", "IN", meetIds).fetchAll();
+
     // let userWithoutPassword = {
     //   id: user.id,
     //   userName: user.userName,
@@ -61,7 +73,7 @@ router.get("/current", async (req, res) => {
     // };
 
     // const current = { user.password, password: null };
-    return res.status(200).json(user);
+    return res.status(200).json({ user, meets });
   }
   return res.status(403).json({ message: "Please Login" });
 });

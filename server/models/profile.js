@@ -5,6 +5,9 @@ const Profile = bookshelf.model("Profile", {
   user: function () {
     return this.belongsTo("User");
   },
+  meets: function () {
+    return this.belongsToMany("Meet");
+  },
 });
 
 module.exports = Profile;

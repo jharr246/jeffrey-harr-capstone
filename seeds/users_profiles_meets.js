@@ -1,5 +1,6 @@
 // const userData = require("./seed_data/users");
 // const profileData = require("./seed_data/profiles");
+const meetData = require("./seed_data/meets");
 
 const faker = require("faker");
 const dogNames = require("dog-names");
@@ -117,6 +118,30 @@ exports.seed = function (knex) {
       })
       .then((res) => {
         return knex("profiles").insert(res);
+      })
+      .then(() => {
+        return (
+          knex("meets")
+            .del()
+            // .then(() => {
+            //   return knex("profiles")
+            //     .pluck("id")
+            //     .then((profileIds) => {
+            //       return profileIds;
+            //     });
+            // })
+            // .then((profileIds) => {
+            //   const meetDatawithprofileIds = meetData.map((meet) => {
+            //     meet.profile_id =
+            //       profileIds[Math.floor(Math.random() * profileIds.length)];
+            //     return meet;
+            //   });
+            //   return knex("meets").insert(meetDatawithprofileIds);
+            // });
+            .then(() => {
+              return knex("meets").insert(meetData);
+            })
+        );
       })
   );
 

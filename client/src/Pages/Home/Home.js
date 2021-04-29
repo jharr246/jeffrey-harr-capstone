@@ -6,6 +6,7 @@ import swal from "@sweetalert/with-react";
 import Search from "../../Components/AllProfiles/AllProfiles";
 import paw from "../../assets/Paw_Print.svg";
 import ParkFinder from "../../Components/ParkFinder/ParkFinder";
+import { Link } from "react-router-dom";
 
 export default class Home extends Component {
   state = {
@@ -23,7 +24,7 @@ export default class Home extends Component {
       .then((res) => {
         this.setState({
           user: res.data,
-          profile: res.data.profile[0],
+          profile: res.data.user.profile[0],
         });
         console.log(res.data);
       });
@@ -68,7 +69,8 @@ export default class Home extends Component {
   };
 
   render() {
-    console.log(this.state.profile);
+    console.log(this.state.profile.id);
+    console.log(this.state.user);
     return (
       <>
         <CreateProfile
@@ -78,7 +80,9 @@ export default class Home extends Component {
         />
         <div className="home">
           <div className="home__bar">
-            <p className="home__welcome">Hello {this.state.user?.firstName}</p>
+            <p className="home__welcome">
+              Hello {this.state.user?.user.firstName}
+            </p>
             <img className="home-img" src={paw} alt="paw" />
             <button
               className="logout"
@@ -131,6 +135,11 @@ export default class Home extends Component {
         ) : (
           <div></div>
         )}
+        <div>
+          <Link to={`/meet/${this.state.profile.id}`}>
+            <p>Create Meet</p>
+          </Link>
+        </div>
       </>
     );
   }

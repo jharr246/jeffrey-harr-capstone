@@ -17,7 +17,7 @@ export default class App extends Component {
           <Route exact path="/createUser" component={CreateUser} />
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/profile/:id" component={ViewProfile} />
-          <ProtectedRoute exact path="/meet" component={CreateMeet} />
+          <ProtectedRoute exact path="/meet/:id" component={CreateMeet} />
         </Switch>
       </BrowserRouter>
     );

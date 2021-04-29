@@ -7,6 +7,9 @@ import calendarIcon from "../../assets/calendar.svg";
 import "./CreateMeet.scss";
 import ParkFinder from "../../Components/ParkFinder/ParkFinder";
 import swal from "@sweetalert/with-react";
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 export default function CreateMeet() {
   const [value, setValue] = useState(null);
@@ -16,6 +19,30 @@ export default function CreateMeet() {
   const [parkButton, setParkButton] = useState(false);
   const [parkName, setParkName] = useState("");
   const [parkAddress, setParkAddress] = useState("");
+
+  const { id } = useParams();
+  let history = useHistory();
+
+  let meetData = {
+    date: formattedDate,
+    time: selectTime,
+    parkName: parkName,
+    parkAddress: parkAddress,
+    profile_id: id,
+  };
+  // console.log(id);
+  let createMeetHandler = (e) => {
+    axios.post("http://localhost:8080/meets", meetData).then((res) => {
+      swal({
+        title: "Meet Created!",
+        text: "Have Fun",
+        icon: "success",
+        button: true,
+      });
+      history.push("/");
+      console.log(res);
+    });
+  };
 
   let calendarHandler = (e) => {
     setCalendar(!calendar);
@@ -115,7 +142,9 @@ export default function CreateMeet() {
       )}
       {formattedDate && selectTime && parkName && parkAddress ? (
         <div className="create-container">
-          <button className="create-btn">Create Meet</button>
+          <button onClick={createMeetHandler} className="create-btn">
+            Create Meet
+          </button>
         </div>
       ) : (
         <></>

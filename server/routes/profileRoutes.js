@@ -3,6 +3,8 @@ const Profile = require("../models/profile");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
+const ProfileMeet = require("../models/profile_meet");
+const Meet = require("../models/meets");
 //create profile
 
 router.post("/", async (req, res) => {
@@ -47,7 +49,24 @@ router.get("/current", async (req, res) => {
     });
 
     const current = { ...profile.attributes, password: null };
-    return res.status(200).json(current);
+
+    const profileMeets = await ProfileMeet.where({
+      profile_id: profile.id,
+    }).fetchAll();
+
+    const meetIds = profileMeets.map((item) => {
+      return item._previousAttributes.meet_id;
+    });
+    // console.log(meetIds);
+    // const meets = profileMeets
+    //   .join("meets", "profileMeets.meet_id", "=", "meets.id")
+    //   .fetchAll();
+
+    // const meets = await Meet.where({ id: profileMeets.meet_id }).fetchAll();
+
+    const meets = await Meet.where("id", "IN", meetIds).fetchAll();
+
+    return res.status(200).json({ current, meets });
   }
   return res.status(403).json({ message: "Please Login" });
 });

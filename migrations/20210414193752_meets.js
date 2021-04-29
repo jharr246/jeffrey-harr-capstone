@@ -3,7 +3,8 @@ exports.up = function (knex) {
     table.increments("id").primary();
     table.string("date").notNullable();
     table.string("time").notNullable();
-    table.string("Location").notNullable();
+    table.string("parkName").notNullable();
+    table.string("parkAddress").notNullable();
   });
 };
 exports.down = function (knex) {
