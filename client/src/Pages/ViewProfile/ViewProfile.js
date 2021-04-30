@@ -2,21 +2,24 @@ import React, { Component } from "react";
 import axios from "axios";
 import paw from "../../assets/Paw_Print.svg";
 import "./ViewProfile.scss";
+import ProfileMeetList from "../../Components/ProfileMeetList/ProfileMeetList";
 
 export default class ViewProfile extends Component {
-  state = { currentProfile: "" };
+  state = { currentProfile: "", meets: "" };
 
   componentDidMount() {
-    axios.get("http://localhost:8080/profiles/all").then((res) => {
-      console.log(res.data);
-      let findProfile = res.data.find((profile) => {
-        return profile.id == this.props.match.params.id;
+    this.setState({ profileMeets: true });
+    axios
+      .get(`http://localhost:8080/profiles/${this.props.match.params.id}`)
+      .then((res) => {
+        console.log(res.data);
+
+        this.setState({
+          currentProfile: res.data.current,
+          meets: res.data.meets,
+        });
+        console.log(this.state.meets);
       });
-      console.log(this.props.match.params);
-      console.log(findProfile);
-      this.setState({ currentProfile: findProfile });
-      console.log(this.state.currentProfile.user.firstName);
-    });
   }
 
   goBackHandler = () => {
@@ -24,6 +27,7 @@ export default class ViewProfile extends Component {
   };
 
   render() {
+    console.log(this.state.profileMeets);
     const { currentProfile } = this.state;
     return (
       <>
@@ -57,6 +61,22 @@ export default class ViewProfile extends Component {
         <p className="profile__owner">
           Owner: {currentProfile.user?.firstName}
         </p>
+        {this.state.meets ? (
+          <div>
+            {this.state.meets.map((meet) => {
+              return (
+                <>
+                  <h1>{meet.parkName}</h1>
+                  <p>{meet.date}</p>
+                  <p>{meet.time}</p>
+                  <p>{meet.parkAddress}</p>
+                </>
+              );
+            })}
+          </div>
+        ) : (
+          <></>
+        )}
       </>
     );
   }

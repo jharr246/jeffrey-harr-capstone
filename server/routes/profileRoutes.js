@@ -79,3 +79,24 @@ router.get("/all", async (req, res) => {
 });
 
 module.exports = router;
+
+//get profile details and meets on other users profile
+router.get("/:id", async (req, res) => {
+  const profile = await Profile.where({ id: req.params.id }).fetch({
+    withRelated: ["user"],
+  });
+
+  const current = { ...profile.attributes, password: null };
+
+  const profileMeets = await ProfileMeet.where({
+    profile_id: profile.id,
+  }).fetchAll();
+
+  const meetIds = profileMeets.map((item) => {
+    return item._previousAttributes.meet_id;
+  });
+
+  const meets = await Meet.where("id", "IN", meetIds).fetchAll();
+
+  return res.status(200).json({ current, meets });
+});

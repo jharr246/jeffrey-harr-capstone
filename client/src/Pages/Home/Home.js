@@ -7,16 +7,19 @@ import Search from "../../Components/AllProfiles/AllProfiles";
 import paw from "../../assets/Paw_Print.svg";
 import ParkFinder from "../../Components/ParkFinder/ParkFinder";
 import { Link } from "react-router-dom";
+import MeetList from "../../Components/MeetsList/MeetList";
 
 export default class Home extends Component {
   state = {
     user: null,
     profile: [],
     search: "",
+    meets: [],
   };
 
   componentDidMount() {
     const token = sessionStorage.getItem("token");
+
     axios
       .get("http://localhost:8080/users/current", {
         headers: { Authorization: `Bearer ${token}` },
@@ -25,6 +28,7 @@ export default class Home extends Component {
         this.setState({
           user: res.data,
           profile: res.data.user.profile[0],
+          meets: res.data.meets,
         });
         console.log(res.data);
       });
@@ -70,7 +74,7 @@ export default class Home extends Component {
 
   render() {
     console.log(this.state.profile.id);
-    console.log(this.state.user);
+    console.log(this.state.meets);
     return (
       <>
         <CreateProfile
@@ -139,6 +143,8 @@ export default class Home extends Component {
           <Link to={`/meet/${this.state.profile.id}`}>
             <p>Create Meet</p>
           </Link>
+
+          <MeetList meets={this.state.meets} homeMeets={this.state.homeMeets} />
         </div>
       </>
     );

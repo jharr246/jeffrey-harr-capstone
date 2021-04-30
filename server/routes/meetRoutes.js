@@ -43,18 +43,4 @@ router.post("/", async (req, res) => {
 //   res.json({ profileMeet, meets });
 // });
 
-// router.get("/:profileId", async (req, res) => {
-//   const profileMeet = await ProfileMeet.where({
-//     profile_id: req.params.profileId,
-//   }).fetchAll();
-
-//   const ids = profileMeet.map((item) => {
-//     return item.meet_id;
-//   });
-
-//   console.log(ids);
-
-//   res.json(profileMeet);
-// });
-
 module.exports = router;
