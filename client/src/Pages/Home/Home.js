@@ -66,14 +66,13 @@ export default class Home extends Component {
       })
       .then((res) => {
         this.setState({
-          profile: res.data.profile[0],
+          profile: res.data.user.profile[0],
         });
-        console.log(res.data.profile[0]);
+        console.log(res.data.user.profile[0]);
       });
   };
 
   render() {
-    console.log(this.state.profile.id);
     console.log(this.state.meets);
     return (
       <>
@@ -139,13 +138,20 @@ export default class Home extends Component {
         ) : (
           <div></div>
         )}
-        <div>
-          <Link to={`/meet/${this.state.profile.id}`}>
-            <p>Create Meet</p>
-          </Link>
+        {this.state.profile ? (
+          <div>
+            <Link to={`/meet/${this.state.profile.id}`}>
+              <p>Create Meet</p>
+            </Link>
 
-          <MeetList meets={this.state.meets} homeMeets={this.state.homeMeets} />
-        </div>
+            <MeetList
+              meets={this.state.meets}
+              homeMeets={this.state.homeMeets}
+            />
+          </div>
+        ) : (
+          <></>
+        )}
       </>
     );
   }

@@ -21,7 +21,7 @@ export default class createProfile extends Component {
         ...this.state.formData,
         [e.target.name]: e.target.value,
         dogAvatar: this.state.profileUrl,
-        user_id: this.props.user.id,
+        user_id: this.props.user.user.id,
       },
     });
   };

@@ -2,13 +2,31 @@ import React, { Component } from "react";
 import axios from "axios";
 import paw from "../../assets/Paw_Print.svg";
 import "./ViewProfile.scss";
-import ProfileMeetList from "../../Components/ProfileMeetList/ProfileMeetList";
+import swal from "@sweetalert/with-react";
 
 export default class ViewProfile extends Component {
-  state = { currentProfile: "", meets: "" };
+  state = {
+    currentProfile: "",
+    meets: "",
+    currentUser: "",
+    parkName: "",
+    date: "",
+    time: "",
+    parkAddress: "",
+  };
 
   componentDidMount() {
-    this.setState({ profileMeets: true });
+    const token = sessionStorage.getItem("token");
+    //get the current user data so the user id can be used to join a meet.
+    axios
+      .get("http://localhost:8080/users/current", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        this.setState({ currentUser: res.data.user.id });
+        console.log(res.data.user.id);
+      });
+
     axios
       .get(`http://localhost:8080/profiles/${this.props.match.params.id}`)
       .then((res) => {
@@ -22,12 +40,54 @@ export default class ViewProfile extends Component {
       });
   }
 
+  joinHandler = (meet) => {
+    console.log(meet);
+    console.log(meet.parkName);
+
+    console.log(meet.date);
+    console.log(meet.time);
+    console.log(meet.parkAddress);
+    // console.log(e.target.value);
+    // console.log(e.target.id);
+    // console.log(e.target.data);
+    // axios.post("http://localhost:8080/meets", meetData).then((res) => {
+    swal({
+      title: "Join?",
+      text: `Join ${this.state.currentProfile.dogName} at ${meet.parkName}?`,
+      icon: "info",
+      buttons: true,
+      dangerMode: true,
+    }).then((join) => {
+      if (join) {
+        this.setState({
+          parkName: meet.parkName,
+          date: meet.date,
+          time: meet.time,
+          parkAddress: meet.parkAddress,
+        });
+        let joinData = {
+          date: this.state.date,
+          time: this.state.time,
+          parkName: this.state.parkName,
+          parkAddress: this.state.parkAddress,
+          profile_id: this.state.currentUser,
+        };
+        console.log(joinData);
+        axios.post("http://localhost:8080/meets", joinData).then((res) => {
+          swal("Meet Joined!");
+          this.props.history.push("/");
+        });
+      } else {
+        swal("Join Canceled");
+      }
+    });
+  };
+
   goBackHandler = () => {
     this.props.history.push("/");
   };
 
   render() {
-    console.log(this.state.profileMeets);
     const { currentProfile } = this.state;
     return (
       <>
@@ -67,6 +127,15 @@ export default class ViewProfile extends Component {
               return (
                 <>
                   <h1>{meet.parkName}</h1>
+                  <button
+                    onClick={this.joinHandler.bind(this, meet)}
+                    name={meet.parkName}
+                    id={meet.time}
+                    value={meet.date}
+                    data={meet.address}
+                  >
+                    Join
+                  </button>
                   <p>{meet.date}</p>
                   <p>{meet.time}</p>
                   <p>{meet.parkAddress}</p>
