@@ -23,8 +23,8 @@ export default class ViewProfile extends Component {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        this.setState({ currentUser: res.data.user.id });
-        console.log(res.data.user.id);
+        this.setState({ currentUser: res.data.user.profile[0].id });
+        console.log(res.data.user.profile[0].id);
       });
 
     axios
@@ -41,16 +41,6 @@ export default class ViewProfile extends Component {
   }
 
   joinHandler = (meet) => {
-    console.log(meet);
-    console.log(meet.parkName);
-
-    console.log(meet.date);
-    console.log(meet.time);
-    console.log(meet.parkAddress);
-    // console.log(e.target.value);
-    // console.log(e.target.id);
-    // console.log(e.target.data);
-    // axios.post("http://localhost:8080/meets", meetData).then((res) => {
     swal({
       title: "Join?",
       text: `Join ${this.state.currentProfile.dogName} at ${meet.parkName}?`,
@@ -118,9 +108,7 @@ export default class ViewProfile extends Component {
         </div>
         <p className="profile__bio">About :</p>
         <p className="profile__bio">{currentProfile.dogBio}</p>
-        <p className="profile__owner">
-          Owner: {currentProfile.user?.firstName}
-        </p>
+
         {this.state.meets ? (
           <div>
             {this.state.meets.map((meet) => {

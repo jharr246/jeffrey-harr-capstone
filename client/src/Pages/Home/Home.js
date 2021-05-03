@@ -127,27 +127,28 @@ export default class Home extends Component {
             <p className="profile__bio"> {this.state.profile.dogBio}</p>
             <p className="home__border"></p>
             <div className="search-container">
-              <Search />
+              <Search profile={this.state.profile} />
             </div>
             <p className="home__border"></p>
             <div className="search-park-container">
               <h1 className="home__park-title">Find Dog Parks!</h1>
               <ParkFinder />
             </div>
+            <p className="home__border home__border--park"></p>
           </>
         ) : (
           <div></div>
         )}
         {this.state.profile ? (
-          <div>
-            <Link to={`/meet/${this.state.profile.id}`}>
-              <p>Create Meet</p>
-            </Link>
-
-            <MeetList
-              meets={this.state.meets}
-              homeMeets={this.state.homeMeets}
-            />
+          <div className="home__meets">
+            <div className="meets">
+              <h2>{`${this.state.profile.dogName}'s Meets`}</h2>
+              <Link to={`/meet/${this.state.profile.id}`}>
+                <button className="meets__button">Create Meet</button>
+              </Link>
+            </div>
+            <p className="home__border--meets home__border"></p>
+            <MeetList meets={this.state.meets} />
           </div>
         ) : (
           <></>

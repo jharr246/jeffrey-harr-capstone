@@ -1,0 +1,33 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials/colors" as *;
+
+.meets {
+  &__park {
+    text-align: center;
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+  }
+  &__day {
+    margin: 0 4.5rem 0rem 1.5rem;
+  }
+  &__address {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+  }
+  &__container {
+    border: 1rem solid $melon;
+    border-radius: 2rem;
+    margin: 0 0 1rem 0;
+  }
+  &__details {
+    background-color: $paleSilver;
+    border-radius: 0 0 1rem 1rem;
+    border-top: 1rem solid $melon;
+    color: white;
+    font-size: 1.25rem;
+  }
+}

@@ -8,12 +8,21 @@ export default class AllUsers extends Component {
 
   componentDidMount() {
     axios.get("http://localhost:8080/profiles/all").then((res) => {
-      console.log(res.data);
       this.setState({ profileList: res.data });
     });
   }
 
+  // componentDidUpdate() {
+  //   console.log(this.state.profileList);
+  //   let filterProfile = this.state.profileList.find(({ profile }) => {
+  //     return profile == this.props.profile;
+  //   });
+  //   console.log(filterProfile);
+  // }
+
   render() {
+    console.log(this.props.profile);
+
     return (
       <div className="profile__list">
         <div className="search-container">

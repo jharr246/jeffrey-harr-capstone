@@ -36,6 +36,16 @@
   &__border {
     border: 0.0625rem solid $paleSilver;
     margin: 2rem 1rem 1rem 1rem;
+
+    &--meets {
+      margin: 1rem 0rem 1rem 0rem;
+    }
+    &--park {
+      margin: 0rem 1rem 1rem 1rem;
+    }
+  }
+  &__meets {
+    margin: 1rem 2rem 1rem 2rem;
   }
 }
 .profile {
@@ -70,7 +80,7 @@
   &__bio {
     font-family: "Varela Round", sans-serif;
     font-weight: bold;
-    margin: 0 3rem;
+    margin: 1rem 3rem;
   }
 }
 .logout {
@@ -113,4 +123,32 @@
 .profile__title {
   font-family: "Varela Round", sans-serif;
   margin: 1rem 0 0 1rem;
+}
+.meets {
+  display: flex;
+  align-items: center;
+  &__button {
+    margin: 0 0rem 0 3rem;
+    background-color: $darkLava;
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+    color: $alabaster;
+    border-radius: 2rem;
+    height: 2rem;
+    width: 6rem;
+    box-shadow: 0 8px 6px -6px black;
+    border: none;
+    outline: none;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      border: none;
+      box-shadow: none;
+      transform: scale(0.9);
+    }
+    &:hover {
+      background-color: $paleSilver;
+    }
+  }
 }
