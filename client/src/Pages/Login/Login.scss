@@ -11,17 +11,35 @@ body {
   font-size: 3.5rem;
   text-align: center;
   color: $darkLava;
-  margin: 0 0 8rem 0;
+  margin: 2rem 0 0rem 0;
+  z-index: 1;
+  @include tablet {
+    font-size: 5rem;
+  }
+  @include desktop {
+    font-size: 8rem;
+  }
 }
 .iframe {
-  position: absolute;
-  top: 2rem;
-  left: 3.25rem;
+  margin: 0rem 0 0 1.5rem;
+  @include tablet {
+    margin: 0rem 0 0 5rem;
+  }
+  @include desktop {
+    margin: 3rem 0 0 0;
+  }
 }
 
 .login {
-  margin: 0 2rem;
+  margin: 0 2rem 3rem 2rem;
   color: $darkLava;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    margin: 0 14rem;
+    font-size: 1.5rem;
+  }
 
   &__form {
     border-radius: 2rem;
@@ -30,11 +48,20 @@ body {
     width: 20rem;
     display: flex;
     flex-direction: column;
-    margin: 0 0 1rem 0;
+
     align-items: center;
     background-color: $melon;
     box-shadow: 0 12px 6px -6px black;
     background-color: light;
+    @include tablet {
+      width: 25rem;
+    }
+    @include desktop {
+      border-radius: 2rem 0 0 2rem;
+      width: 28rem;
+      height: 28rem;
+      box-shadow: none;
+    }
   }
 
   &__labels {
@@ -49,6 +76,17 @@ body {
     height: 15rem;
     width: 20rem;
     display: none;
+    @include desktop {
+      display: block;
+      height: 28rem;
+      width: 28rem;
+      border-radius: 0 2rem 2rem 0;
+      background-image: url("../../assets/cookie-the-pom-siNDDi9RpVY-unsplash.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      align-items: center;
+    }
   }
   &__button {
     margin: 2rem 0 3rem 0;
@@ -63,6 +101,12 @@ body {
     font-weight: bold;
     color: $darkLava;
     padding: 0;
+
+    @include desktop {
+      width: 7rem;
+      height: 4rem;
+      font-size: 1.25rem;
+    }
     &:focus {
       outline: none;
     }
@@ -83,6 +127,13 @@ body {
     outline: none;
     border: none;
     background-color: $alabaster;
+    @include tablet {
+      width: 15rem;
+    }
+    @include desktop {
+      height: 3rem;
+      width: 18rem;
+    }
 
     &:focus {
       outline: none;
@@ -92,6 +143,17 @@ body {
   }
   &__title {
     font-family: "Varela Round", sans-serif;
+    margin: 0 1rem 0 5rem;
+    @include tablet {
+      margin: 0 1rem 0 2rem;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    @include desktop {
+      margin: 2rem 0 0 0;
+    }
   }
 }
 .signUp {
@@ -105,6 +167,13 @@ body {
   box-shadow: 0 8px 6px -6px black;
   font-weight: bold;
   color: $darkLava;
+
+  @include desktop {
+    width: 7rem;
+    height: 4rem;
+    font-size: 1.25rem;
+  }
+
   &:focus {
     outline: none;
   }
@@ -118,9 +187,51 @@ body {
     cursor: pointer;
   }
 }
-.paw {
+.login-paw {
   width: 4rem;
   height: 4rem;
-  position: absolute;
+  margin: 0 0rem 0 0;
   transform: rotate(-45deg);
+  @include tablet {
+    // position: absolute;
+    // left: 29rem;
+  }
+}
+.desktop-login {
+  @include desktop {
+    display: flex;
+    margin: 0 0 4rem 0;
+  }
+}
+.opacity {
+  @include desktop {
+    background-color: rgba(32, 32, 32, 0.3);
+    height: 100%;
+    width: 100%;
+    border-radius: 0 2rem 2rem 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: flex-start;
+  }
+}
+.img-letters {
+  display: none;
+  @include desktop {
+    display: block;
+    margin: 0;
+    position: relative;
+    color: white;
+    top: 23rem;
+    left: 1rem;
+    font-family: "Varela Round", sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+}
+.title-header {
+  @include desktop {
+    display: flex;
+    align-items: center;
+    margin: 0 0 5rem 3rem;
+  }
 }

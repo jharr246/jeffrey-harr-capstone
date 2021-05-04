@@ -11,6 +11,9 @@
 
 .create {
   margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__form {
     border-radius: 2rem;
     height: 38rem;
@@ -67,10 +70,17 @@
     }
   }
 }
+
+.paw-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 0 0 4rem;
+}
+
 .paw {
   width: 4rem;
   height: 4rem;
-  position: absolute;
-  right: 2rem;
+  // position: absolute;
+  // right: 2rem;
   transform: rotate(-45deg);
 }

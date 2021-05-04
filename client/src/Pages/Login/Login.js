@@ -44,47 +44,57 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login">
-        <h1 className="logo">DogSpace</h1>
-        <div className="iframe">
-          <iframe
-            src="https://giphy.com/embed/l4HogV6533Je2oG40"
-            width="280"
-            height="205"
-            frameBorder="0"
-            class="giphy-embed"
-            allowFullScreen
-          ></iframe>
-        </div>
-
-        <img className="paw" src={paw} alt="paw" />
-        <form className="login__form" onSubmit={this.handleSubmit}>
-          <h2 className="login__title">Please Login</h2>
-          <label className="login__labels" htmlFor="email">
-            Email
-            <input
-              className="login__input"
-              type="email"
-              name="email"
-              onChange={this.handleChange}
-            />
-          </label>
-          <label className="login__labels" htmlFor="password">
-            Password
-            <input
-              className="login__input"
-              type="password"
-              name="password"
-              onChange={this.handleChange}
-            />
-          </label>
-          <div>
-            <input className="login__button" type="submit" value="Login" />
-            <Link to="/createUser">
-              <button className="signUp">Sign-Up!</button>
-            </Link>
+        <div className="title-header">
+          <h1 className="logo">DogSpace</h1>
+          <div className="iframe">
+            <iframe
+              className="iframe-dogs"
+              src="https://giphy.com/embed/l4HogV6533Je2oG40"
+              width="280"
+              height="200"
+              frameBorder="0"
+              class="giphy-embed"
+              allowFullScreen
+            ></iframe>
           </div>
-          <img className="login__img" src={dogImage} alt="dog" />
-        </form>
+        </div>
+        <div className="desktop-login">
+          <form className="login__form" onSubmit={this.handleSubmit}>
+            <div className="login__header">
+              <h2 className="login__title">Please Login</h2>
+              <img className="login-paw" src={paw} alt="paw" />
+            </div>
+            <label className="login__labels" htmlFor="email">
+              Email
+              <input
+                className="login__input"
+                type="email"
+                name="email"
+                onChange={this.handleChange}
+              />
+            </label>
+            <label className="login__labels" htmlFor="password">
+              Password
+              <input
+                className="login__input"
+                type="password"
+                name="password"
+                onChange={this.handleChange}
+              />
+            </label>
+            <div>
+              <input className="login__button" type="submit" value="Login" />
+              <Link to="/createUser">
+                <button className="signUp">Sign-Up!</button>
+              </Link>
+            </div>
+          </form>
+          <div className="login__img">
+            <div className="opacity">
+              <p className="img-letters">Social Media for Dogs</p>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

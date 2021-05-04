@@ -30,16 +30,18 @@ export default class createUser extends Component {
       <div className="create">
         <h1 className="title">Create Account</h1>
         <form className="create__form" onSubmit={this.handleSubmit}>
-          <img className="paw" src={paw} alt="paw" />
-          <label className="create__label" htmlFor="firstName">
-            First name
-            <input
-              className="create__input"
-              type="text"
-              name="firstName"
-              onChange={this.handleChange}
-            />
-          </label>
+          <div className="paw-container">
+            <img className="paw" src={paw} alt="paw" />
+            <label className="create__label" htmlFor="firstName">
+              First name
+              <input
+                className="create__input"
+                type="text"
+                name="firstName"
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
           <label className="create__label" htmlFor="lastName">
             Last name
             <input
