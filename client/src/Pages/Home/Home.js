@@ -8,6 +8,7 @@ import paw from "../../assets/Paw_Print.svg";
 import ParkFinder from "../../Components/ParkFinder/ParkFinder";
 import { Link } from "react-router-dom";
 import MeetList from "../../Components/MeetsList/MeetList";
+import Navbar from "../../Components/Navbar/Navbar";
 
 export default class Home extends Component {
   state = {
@@ -82,7 +83,7 @@ export default class Home extends Component {
           close={this.close}
         />
         <div className="home">
-          <div className="home__bar">
+          {/* <div className="home__bar">
             <p className="home__welcome">
               Hello {this.state.user?.user.firstName}
             </p>
@@ -94,8 +95,11 @@ export default class Home extends Component {
             >
               Logout
             </button>
-          </div>
-
+          </div> */}
+          <Navbar
+            history={this.props.history}
+            user={this.state.user?.user.firstName}
+          />
           <h2 className="profile__title">Your Profile</h2>
         </div>
         {/* display profile data after profile form submit */}

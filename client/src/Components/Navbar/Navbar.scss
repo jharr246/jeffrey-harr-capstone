@@ -1,0 +1,18 @@
+@use "../../partials/fonts" as *;
+@use "../../partials/breakpoints" as *;
+@use "../../partials/colors" as *;
+
+.home {
+  &__bar {
+    display: flex;
+    background-color: $melon;
+    align-items: center;
+    height: 4rem;
+    justify-content: space-between;
+  }
+  &__welcome {
+    margin: 0 4.5rem 0 1rem;
+    font-family: "Varela Round", sans-serif;
+    font-weight: bold;
+  }
+}

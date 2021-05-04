@@ -72,6 +72,27 @@ export default class ViewProfile extends Component {
       }
     });
   };
+  logout = (e) => {
+    sessionStorage.setItem("token", null);
+    this.props.history.push("/login");
+  };
+
+  logoutHandler = (e) => {
+    swal({
+      title: "Log Out?",
+      text: "Select okay to log out now",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((logout) => {
+      if (logout) {
+        this.logout();
+        swal("Come back soon!", {
+          icon: "success",
+        });
+      }
+    });
+  };
 
   goBackHandler = () => {
     this.props.history.push("/");
