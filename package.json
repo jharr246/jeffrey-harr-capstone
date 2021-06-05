@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-dependencies": "cd server && npm install",
     "client-dependencies": "cd client && npm install",
-    "install-all-deps": "npm i && concurrently \"npm run server-dependencies\" \"npm run client-dependencies\""
+    "server-start": "cd server && npm start",
+    "client-start": "cd client && npm start",
+    "install-all-deps": "npm i && concurrently \"npm run server-dependencies\" \"npm run client-dependencies\"",
+    "dev": "concurrently \"npm run server-start\" \"npm run client-start\""
   },
   "author": "",
   "license": "ISC",

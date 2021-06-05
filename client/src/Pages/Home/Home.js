@@ -8,7 +8,7 @@ import paw from "../../assets/Paw_Print.svg";
 import ParkFinder from "../../Components/ParkFinder/ParkFinder";
 import { Link } from "react-router-dom";
 import MeetList from "../../Components/MeetsList/MeetList";
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar/navbar";
 
 export default class Home extends Component {
   state = {
