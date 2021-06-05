@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-dependencies": "cd server && npm install",
-    "client-dependencies": "cd client && npm install --prefix forntend",
-    "install-all-deps": "concurrently \"npm i\" \"npm run server-dependencies\" \"npm run client-dependencies\""
+    "client-dependencies": "cd client && npm install",
+    "install-all-deps": "npm i && concurrently \"npm run server-dependencies\" \"npm run client-dependencies\""
   },
   "author": "",
   "license": "ISC",
