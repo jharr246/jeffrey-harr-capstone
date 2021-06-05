@@ -1,13 +1,13 @@
 # DogSpace
 
-Dogspace is a social media palteform created for dogs and dog owners. This project allows users to create an account and profile, search for similiar dogs, and find local dog parks. 
+Dogspace is a social media platform created for dogs and dog owners. This project allows users to create an account and profile, search for similiar dogs, and find local dog parks. 
 This was submitted as a capstone assignment for Brainstation.
 ## Installation
 
 Create a .env file in the server directory. A .env.sample is provided. 
 You will need a API key from [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview).
 
-# Use the package mananger [npm](https://www.npmjs.com/) to install DogSpace.
+### Use the package mananger [npm](https://www.npmjs.com/) to install DogSpace.
 
 In the root file directory. Installs all dependencies. 
 ```bash
