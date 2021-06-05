@@ -16,5 +16,5 @@ npm run dev
 ```
 ## Usage
 
-<img width="373" alt="Screen Shot 2021-06-05 at 6 05 46 PM" src="https://user-images.githubusercontent.com/50892294/120906932-72fcde00-c62b-11eb-917d-1ddc6411745e.png"><img width="368" alt="Screen Shot 2021-06-05 at 6 06 06 PM" src="https://user-images.githubusercontent.com/50892294/120906938-7d1edc80-c62b-11eb-8633-6ea9ce468b2f.png">
+<img width="350" height="500" alt="Screen Shot 2021-06-05 at 6 05 46 PM" src="https://user-images.githubusercontent.com/50892294/120906932-72fcde00-c62b-11eb-917d-1ddc6411745e.png"><img width="350" height="500" alt="Screen Shot 2021-06-05 at 6 06 06 PM" src="https://user-images.githubusercontent.com/50892294/120906938-7d1edc80-c62b-11eb-8633-6ea9ce468b2f.png">
 
