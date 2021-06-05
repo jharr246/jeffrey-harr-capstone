@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-dependencies": "npm install",
+    "client-dependencies": "npm install --prefix forntend",
+    "install-all-deps": "concurrently \"npm run server-dependencies\" \"npm run client-dependencies\""
   },
   "author": "",
   "license": "ISC",
