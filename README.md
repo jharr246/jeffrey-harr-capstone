@@ -16,7 +16,9 @@ npm run dev
 ```
 ## Usage
 
-<img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 05 46 PM" src="https://user-images.githubusercontent.com/50892294/120906932-72fcde00-c62b-11eb-917d-1ddc6411745e.png"> <img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 06 06 PM" src="https://user-images.githubusercontent.com/50892294/120906938-7d1edc80-c62b-11eb-8633-6ea9ce468b2f.png"> <img width="150" height="300"<img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 10 11 PM" src="https://user-images.githubusercontent.com/50892294/120907271-28c92c00-c62e-11eb-83d2-74170a15c77b.png">
- alt="Screen Shot 2021-06-05 at 6 07 41 PM" src="https://user-images.githubusercontent.com/50892294/120907261-17801f80-c62e-11eb-90b8-e5bc9def5f0a.png">
+<img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 05 46 PM" src="https://user-images.githubusercontent.com/50892294/120906932-72fcde00-c62b-11eb-917d-1ddc6411745e.png"> <img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 06 06 PM" src="https://user-images.githubusercontent.com/50892294/120906938-7d1edc80-c62b-11eb-8633-6ea9ce468b2f.png"> <imgwidth="150" height="300" alt="Screen Shot 2021-06-05 at 6 07 41 PM" src="https://user-images.githubusercontent.com/50892294/120907292-4dbd9f00-c62e-11eb-85a7-3a63094943f6.png"> <img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 10 11 PM" src="https://user-images.githubusercontent.com/50892294/120907305-57470700-c62e-11eb-9915-0cf32475a0ef.png"> <img width="150" height="300" alt="Screen Shot 2021-06-05 at 6 19 59 PM" src="https://user-images.githubusercontent.com/50892294/120907319-6332c900-c62e-11eb-8dd1-abfdded6ed7c.png">
+
+
+
 
 
