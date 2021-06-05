@@ -12,6 +12,9 @@
   }
   &__day {
     margin: 0 4.5rem 0rem 1.5rem;
+    @include tablet {
+      margin: 0 12rem 0rem 1.5rem;
+    }
   }
   &__address {
     text-align: center;
@@ -22,6 +25,9 @@
     border: 1rem solid $melon;
     border-radius: 2rem;
     margin: 0 0 1rem 0;
+    @include tablet {
+      width: 30rem;
+    }
   }
   &__details {
     background-color: $paleSilver;
@@ -30,4 +36,9 @@
     color: white;
     font-size: 1.25rem;
   }
+}
+.meetlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

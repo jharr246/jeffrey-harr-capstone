@@ -115,7 +115,10 @@
   opacity: 0.5;
 }
 .search-park-container {
-  margin: 0 0 5rem 0;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .home__park-title {
   margin: 0 1.5rem;
@@ -127,6 +130,7 @@
 .meets {
   display: flex;
   align-items: center;
+  justify-content: center;
   &__button {
     margin: 0 0rem 0 3rem;
     background-color: $darkLava;
@@ -150,5 +154,19 @@
     &:hover {
       background-color: $paleSilver;
     }
+  }
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+.bio-container {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    margin: 0 0 0 12rem;
+  }
+  @include desktop {
+    margin: 0 0 0 28rem;
   }
 }

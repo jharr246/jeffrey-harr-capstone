@@ -14,11 +14,12 @@ export default class ParkFinder extends Component {
   parkFinderHandler = (e) => {
     e.preventDefault();
     axios
-      .get(
-        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=dogpark+in+${this.state.city}+${this.state.st}&key=AIzaSyDIOdpFuixBdQIFMkjmgFUPc-KvD2u7Q44`
-      )
+      .post("http://localhost:8080/parks/", {
+        city: this.state.city,
+        st: this.state.st,
+      })
       .then((res) => {
-        this.setState({ parkList: res.data.results });
+        this.setState({ parkList: res.data });
 
         console.log(this.state.parkList);
       });

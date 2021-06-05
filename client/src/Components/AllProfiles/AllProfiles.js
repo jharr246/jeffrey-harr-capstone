@@ -12,14 +12,6 @@ export default class AllUsers extends Component {
     });
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.state.profileList);
-  //   let filterProfile = this.state.profileList.find(({ profile }) => {
-  //     return profile == this.props.profile;
-  //   });
-  //   console.log(filterProfile);
-  // }
-
   render() {
     console.log(this.props.profile);
 
@@ -48,6 +40,7 @@ export default class AllUsers extends Component {
               <p>Search by: </p>
               <p>Breed</p>
               <p>Dog Name</p>
+              <p>{this.state.profileList.length}</p>
             </div>
           </div>
         ) : (

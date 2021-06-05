@@ -4,7 +4,7 @@ import "./MeetList.scss";
 export default class MeetList extends Component {
   render() {
     return (
-      <div>
+      <div className="meetlist">
         {this.props.meets.map((meet) => {
           return (
             <div className="meets__container">

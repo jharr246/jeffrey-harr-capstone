@@ -127,8 +127,12 @@ export default class Home extends Component {
                 </p>
               </div>
             </div>
-            <p className="profile__bio">About {this.state.profile.dogName}:</p>
-            <p className="profile__bio"> {this.state.profile.dogBio}</p>
+            <div className="bio-container">
+              <p className="profile__bio">
+                About {this.state.profile.dogName}:
+              </p>
+              <p className="profile__bio"> {this.state.profile.dogBio}</p>
+            </div>
             <p className="home__border"></p>
             <div className="search-container">
               <Search profile={this.state.profile} />
@@ -136,6 +140,7 @@ export default class Home extends Component {
             <p className="home__border"></p>
             <div className="search-park-container">
               <h1 className="home__park-title">Find Dog Parks!</h1>
+
               <ParkFinder />
             </div>
             <p className="home__border home__border--park"></p>
@@ -152,6 +157,7 @@ export default class Home extends Component {
               </Link>
             </div>
             <p className="home__border--meets home__border"></p>
+
             <MeetList meets={this.state.meets} />
           </div>
         ) : (
