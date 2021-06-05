@@ -7,9 +7,9 @@ This was submitted as a capstone assignment for Brainstation.
 Create a .env file in the server directory. A .env.sample is provided. 
 You will need a API key from [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview).
 
-#Use the package mananger [npm](https://www.npmjs.com/) to install DogSpace.
+# Use the package mananger [npm](https://www.npmjs.com/) to install DogSpace.
 
-In the root file directory.
+In the root file directory. Installs all dependencies. 
 ```bash
 npm run install-all-deps
 ```
